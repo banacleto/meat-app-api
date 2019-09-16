@@ -1,0 +1,27 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "> A Node.js project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banacleto/meat-app-api.git"
+  },
+  "author": "Bruno Anacleto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banacleto/meat-app-api/issues"
+  },
+  "homepage": "https://github.com/banacleto/meat-app-api#readme",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^2.7.1",
+    "fastify-swagger": "^2.4.0",
+    "mongoose": "^5.6.10",
+    "nodemon": "^1.19.1"
+  }
+}
