@@ -7,10 +7,13 @@
 
 // Import our Controllers
 const restaurantController = require('../controllers/restaurantController')
+const menuItemController = require('../controllers/menuItemController')
+const reviewController = require('../controllers/reviewController')
+const orderController = require('../controllers/orderController')
 
 const routes = [
     {
-        method: 'GET',
+        method: 'GET', 
         url: '/api/restaurants',
         handler: restaurantController.restaurants
     },
@@ -33,6 +36,86 @@ const routes = [
         method: 'DELETE',
         url: '/api/restaurants/:id',
         handler: restaurantController.deleteRestaurant
+    },
+    {
+        method: 'GET',
+        url: '/api/menu',
+        handler: menuItemController.menuItems
+    },
+    {
+        method: 'GET',
+        url: '/api/menu/:id',
+        handler: menuItemController.menuItemById
+    },
+    {
+        method: 'GET',
+        url: '/api/restaurants/:id/menu',
+        handler: menuItemController.menuItemByRestaurantId
+    },
+    {
+        method: 'POST',
+        url: '/api/menu',
+        handler: menuItemController.addMenuItem
+    },
+    {
+        method: 'PUT',
+        url: '/api/menu/:id',
+        handler: menuItemController.updateMenuItem
+    },
+    {
+        method: 'DELETE',
+        url: '/api/menu/:id',
+        handler: menuItemController.deleteMenuItem
+    },
+    {
+        method: 'GET',
+        url: '/api/reviews',
+        handler: reviewController.reviews
+    },
+    {
+        method: 'GET',
+        url: '/api/reviews/:id',
+        handler: reviewController.reviewById
+    },
+    {
+        method: 'GET',
+        url: '/api/restaurants/:id/reviews',
+        handler: reviewController.reviewsByRestaurantId
+    },
+    {
+        method: 'POST',
+        url: '/api/reviews',
+        handler: reviewController.addReview
+    },
+    {
+        method: 'PUT',
+        url: '/api/reviews/:id',
+        handler: reviewController.updateReview
+    },
+    {
+        method: 'DELETE',
+        url: '/api/reviews/:id',
+        handler: reviewController.deleteReview
+    },
+    {
+        method: 'GET', 
+        url: '/api/orders',
+        handler: orderController.orders
+    },
+    {
+        method: 'GET',
+        url: '/api/orders/:id',
+        handler: orderController.orderById
+    },
+    {
+        method: 'POST',
+        url: '/api/orders',
+        handler: orderController.addOrder
+    },
+    {
+        method: 'DELETE',
+        url: '/api/orders/:id',
+        handler: orderController.deleteOrder
     }
 ]
 

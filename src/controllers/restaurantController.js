@@ -54,7 +54,7 @@ exports.restaurantById = async (req, reply) => {
 // Add a new restaurant
 exports.addRestaurant = async (req, reply) => {
     try {
-        const restaurant = new Restaurant(...req.body)
+        const restaurant = new Restaurant(req.body)
         return restaurant.save()
     } catch (err) {
         throw boom.boomify(err)
