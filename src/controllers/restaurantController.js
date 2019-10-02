@@ -33,7 +33,16 @@ const Restaurant = require('../models/Restaurant')
 // Get all restaurants
 exports.restaurants = async (req, reply) => {
     try {
-        const restaurants = await Restaurant.find()
+        let restaurants = []
+        if (req.query.q) {
+            let regex = new RegExp(req.query.q, "i")
+            let query = { $or: [{ name: regex }, { category: regex }, { about: regex }] };
+
+            restaurants = await Restaurant.find(query)
+        }
+        else {
+            restaurants = await Restaurant.find()
+        }
         return restaurants
     } catch (err) {
         throw boom.boomify(err)
