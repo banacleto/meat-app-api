@@ -7,6 +7,7 @@
 - JavaScript
 - Node.js
 - Fastify
+- Fastify Blipp
 - REST APIs
 - GraphQL
 - Swagger
@@ -26,7 +27,7 @@ npm init
 
 ### Install all the dependencies that we will need
 
-`npm i nodemon mongoose fastify fastify-swagger boom`
+`npm i nodemon mongoose fastify fastify-cors fastify-blipp fastify-swagger boom`
 
 ### Below is a brief description of what each package does, quoted from their respective websites:
 
@@ -39,6 +40,10 @@ To set up nodemon, we need to add the following line of code to our package.json
 **mongoose** provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 **fastify** is a web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. It is inspired by Hapi and Express and, as far as we know, it is one of the fastest web frameworks in town.
+
+**fastify-cors** enables the use of CORS in a Fastify application.
+
+**fastify-blipp** prints your routes to the console. So each time your server starts, you know which endpoints are available.
 
 **fastify-swagger** is a swagger documentation generator for fastify. It uses the schemas you declare in your routes to generate a swagger compliant doc.
 

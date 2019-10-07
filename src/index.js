@@ -3,6 +3,9 @@ const fastify = require('fastify')({
   logger: true
 })
 
+// Register required external modules from fastify-blipp
+fastify.register(require('fastify-blipp'))
+
 // Require external modules from mongoose
 const mongoose = require('mongoose')
 
@@ -19,8 +22,7 @@ mongoose.connect('mongodb://localhost/meatappdb')
 
 /**
  * Configuring CORS w/ Dynamic Origin
- * If you do not want to block REST tools or server-to-server requests, 
- * add a !origin check in the origin function.
+ * If you do not want to block REST tools or server-to-server requests, add a !origin check in the origin function.
  */
 let whitelist = ['http://localhost:4200']
 
@@ -51,6 +53,7 @@ routes.forEach((route, index) => {
 const start = async () => {
   try {
     await fastify.listen(3000, '0.0.0.0')
+    fastify.blipp()
     fastify.swagger()
     fastify.log.info(`CORS-enabled web server listening on port ${fastify.server.address().port}`)
   } catch (err) {
