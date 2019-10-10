@@ -1,6 +1,17 @@
+// Require the fs module to provide an API for interacting with the file system
+const fs = require('fs')
+
+// Require the path module to provide utilities for working with file and directory paths
+const path = require('path')
+
 // Require the fastfy framework and instantiate it
 const fastify = require('fastify')({
-  logger: true
+  logger: true,
+  http2: true,
+  https: {
+    key: fs.readFileSync(path.join(__dirname, '..', 'keys', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '..', 'keys', 'cert.pem'))
+  }
 })
 
 // Register required external modules from fastify-blipp
@@ -52,7 +63,7 @@ routes.forEach((route, index) => {
 // Initialize the server on port 3000
 const start = async () => {
   try {
-    await fastify.listen(3000, '0.0.0.0')
+    await fastify.listen(3001, '0.0.0.0')
     fastify.blipp()
     fastify.swagger()
     fastify.log.info(`CORS-enabled web server listening on port ${fastify.server.address().port}`)
