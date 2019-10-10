@@ -16,7 +16,7 @@ const swagger = require('./config/swagger')
  */
 let whitelist = ['http://localhost:4200']
 
-fastify.register(require('fastify-cors'), { 
+fastify.register(require('fastify-cors'), {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
@@ -28,7 +28,7 @@ fastify.register(require('fastify-cors'), {
 
 // Declare our first route
 fastify.get('/', async (request, reply) => {
-  reply.send({msg: 'This is CORS-enabled for a whitelisted domain.'})
+  reply.send({ msg: 'This is CORS-enabled for a whitelisted domain.' })
 })
 
 // Register Swagger

@@ -13,7 +13,7 @@ const orderController = require('../controllers/orderController')
 
 const routes = [
     {
-        method: 'GET', 
+        method: 'GET',
         url: '/api/restaurants',
         handler: restaurantController.restaurants
     },
@@ -98,7 +98,7 @@ const routes = [
         handler: reviewController.deleteReview
     },
     {
-        method: 'GET', 
+        method: 'GET',
         url: '/api/orders',
         handler: orderController.orders
     },
