@@ -27,7 +27,7 @@ npm init
 
 ### Install all the dependencies that we will need
 
-`npm i nodemon mongoose fastify fastify-cors fastify-blipp fastify-swagger boom`
+`npm i nodemon mongoose fastify fastify-cors fastify-blipp fastify-swagger fastify-gql graphql boom`
 
 ### Below is a brief description of what each package does, quoted from their respective websites:
 
@@ -46,6 +46,10 @@ To set up nodemon, we need to add the following line of code to our package.json
 **fastify-blipp** prints your routes to the console. So each time your server starts, you know which endpoints are available.
 
 **fastify-swagger** is a swagger documentation generator for fastify. It uses the schemas you declare in your routes to generate a swagger compliant doc.
+
+**fastify-gql** fastify barebone GraphQL adapter.
+
+**graphql** the javascript reference implementation for GraphQL.
 
 **boom** provides a set of utilities for returning HTTP errors.
 
