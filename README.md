@@ -1,4 +1,4 @@
-# Meat Angular Api - REST API With Node.js, MongoDB, Fastify, and Swagger
+# Meat Angular Api - REST API With Node.js, MongoDB, Fastify and Swagger
 
 ## 1. Let’s Get Started
 
