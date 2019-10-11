@@ -42,7 +42,7 @@ routes.forEach((route, index) => {
 // Initialize the server on port 3000
 const start = async () => {
   try {
-    await fastify.listen(3001, '0.0.0.0')
+    await fastify.listen(3000, '0.0.0.0')
     fastify.blipp()
     fastify.swagger()
     fastify.log.info(`CORS-enabled web server listening on port ${fastify.server.address().port}`)
