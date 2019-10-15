@@ -6,8 +6,7 @@
 
 - JavaScript
 - Node.js
-- Fastify
-- Fastify Blipp
+- Fastify (CORS, Blipp)
 - REST APIs
 - GraphQL
 - Swagger
